@@ -1,4 +1,4 @@
-# slither-db
+# slitherDB
 ![alt text](https://github.com/SlitherDB/slither-db/blob/master/misc/Screen%20Shot%202020-04-27%20at%2013.28.39.png "Logo")
 A database for c# projects, i have started to develop this for storing scores and other user data for the user in my unity games. This database at the moment can only store data locally on people's computers because i cant afford servers
 # The terminal
