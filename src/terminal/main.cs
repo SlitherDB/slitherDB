@@ -27,8 +27,8 @@ namespace slitherTerminal
             if (type == "command")
             {
                 //just get the prompt
-                Console.WriteLine("> ");
-                string command = Console.ReadLine();
+                Console.WriteLine(">");
+                var command = Console.ReadLine();
                 /* 
                 parse the command
                 commands are layed out like this:
@@ -47,7 +47,47 @@ namespace slitherTerminal
                         Directory.CreateDirectory(folder);
                         db.pathTodb = folder;
                     }
+                    if (parsedCommand[1] == "collection")
+                    {
+                        slither.EnterCollection(parsedCommand[2]);
+                    }
+                    if (parsedCommand[1] == "document")
+                    {
+                        Console.WriteLine("hehdiuewhdew");
+                        slither.EnterDocument(parsedCommand[2]);
+                    }
                 }
+
+                if (parsedCommand[0] == "delete")
+                {
+                    if (parsedCommand[1] == "database")
+                    {
+                        Console.WriteLine("Are you sure You want to delete this database Y/N? > ");
+                        var answer = Console.ReadLine();
+                        answer = answer.ToLower();
+                        if (answer == "y")
+                        {
+                            slither.Delete(parsedCommand[2], parsedCommand[1]);
+
+                        } 
+
+                    }
+                    if (parsedCommand[1] == "collection")
+                    {
+            
+                            Console.WriteLine("Are you sure You want to delete this collection Y/N? > ");
+                            var answer = Console.ReadLine();
+                            answer = answer.ToLower();
+                            if (answer == "y")
+                            {
+                                slither.Delete(parsedCommand[2], parsedCommand[1]);
+
+                            }
+
+                        
+                    }
+                }
+   
                 if (parsedCommand[0] == "create")
                 {
                     //if the first parameter is database create a datase
@@ -60,6 +100,15 @@ namespace slitherTerminal
                     {
                         string path = db.pathTodb;
                         slither.CreateCollection(path, parsedCommand[2]);
+                    }
+                    if (parsedCommand[1] == "document")
+                    {
+                        slither.CreateDocument(db.pathToCollection, parsedCommand[2]);
+                    }
+                    if (parsedCommand[1] == "field")
+                    {
+                        Console.WriteLine("creating field");
+                        slither.AddData(db.pathToDocument, parsedCommand[2]);
                     }
                 }
                 prompt("command");
