@@ -20,6 +20,11 @@ Creating documents:
 ```
 > create document names
 ```
+You can also create fields in documents with the terminal aswell:
+```
+>create field "name":"Bob"
+```
+You will notice that this has a very similar syntax to JSON.
 ## The nav command
 If you are familiar with the linux terminal then you will also be familiar with the cd command, if you are not familiar with the linux terminal then cd will enter a directory for you. 
 In the slitherDB terminal there is the nav command that will help you enter databases to create collections in. 
@@ -27,4 +32,13 @@ In the slitherDB terminal there is the nav command that will help you enter data
 > nav database db
 ```
 wich will allow you to run commands in that database.
-
+You can also nav into collections:
+```
+> nav collection data
+```
+Wich will allow you to run commands in that collection
+Nav works with documents aswell:
+```
+> nav document user1
+```
+wich will allow you to create fields in that document.
