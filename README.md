@@ -16,7 +16,7 @@ You can also create a collection like this:
 > create collection data
 ```
 this will create a collection called data.
-Creating documents is still a work-in progress but will look something like this:
+Creating documents:
 ```
 > create document names
 ```
@@ -27,3 +27,4 @@ In the slitherDB terminal there is the nav command that will help you enter data
 > nav database db
 ```
 wich will allow you to run commands in that database.
+
