@@ -57,7 +57,20 @@ namespace slitherTerminal
                         slither.EnterDocument(parsedCommand[2]);
                     }
                 }
-
+                if (parsedCommand[0] == "echo")
+                {
+                    if (parsedCommand[1] == "document")
+                    {
+                        Console.WriteLine(slither.FindDocument(parsedCommand[2]));
+                    } else if (parsedCommand[1] == "query")
+                    {
+                        Console.WriteLine(slither.Query(parsedCommand[2]));
+                    }
+                    else
+                    {
+                        Console.WriteLine(parsedCommand[1]);
+                    }
+                }
                 if (parsedCommand[0] == "delete")
                 {
                     if (parsedCommand[1] == "database")
@@ -96,15 +109,18 @@ namespace slitherTerminal
                         slither.CreateDatabase(parsedCommand[2], "terminal");
          
                     }
+                    //create collections
                     if (parsedCommand[1] == "collection")
                     {
                         string path = db.pathTodb;
                         slither.CreateCollection(path, parsedCommand[2]);
                     }
+                    //create documents
                     if (parsedCommand[1] == "document")
                     {
                         slither.CreateDocument(db.pathToCollection, parsedCommand[2]);
                     }
+                    //create fields
                     if (parsedCommand[1] == "field")
                     {
                         Console.WriteLine("creating field");
