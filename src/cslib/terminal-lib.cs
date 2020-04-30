@@ -2,15 +2,20 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+
 namespace datastorageapplication
 {
 
     class db
     {
+        
         //the path to the database or collection you are currently in
         public static string pathTodb = "NO DATABASE HAS BEEN NAVIGATED INTO";
         public static string pathToCollection = "NO COLLECTION HAS BEEN NAVIGATED INTO";
-        public static string pathToDocument = "NO DOCUMENT HAS BEEN NAVIGATED INTO";
+        public static string pathToDocument = "NO  HAS BEEN NAVIGATED INTO";
         //create a database
         public void CreateDatabase(string name, string calledfrom)
         {
@@ -34,15 +39,28 @@ namespace datastorageapplication
 
 
         }
+        public Object Document(string name)
+        {
+            Dictionary<string, string> Fields = new Dictionary<string, string>();
+            return Fields;
+
+        }
         public void AddData(string document, string data)
         {
-            //get the path to the desktop folder
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-            //create the fill directory of the document example: desktop/db/document
-            var folder = Path.Combine(pathTodb, pathToCollection, document);
-            File.AppendAllText(folder, data + Environment.NewLine);
+            string[] DataStr = data.Split(':');
+            if (DataStr.Length < 2)
+            {
+                Console.WriteLine("Error: Field must have a value!");
+            }
+            else
+            {
+                //get the path to the desktop folder
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                //create the fill directory of the document example: desktop/db/document
+                var folder = Path.Combine(pathTodb, pathToCollection, document);
+                File.AppendAllText(folder, data + Environment.NewLine);
 
-
+            }
 
 
         }
@@ -90,7 +108,17 @@ namespace datastorageapplication
   
             using (StreamWriter writer = File.CreateText(path)) ;
         }
+        public string FindDocument(string document)
+        {
+            string path = Path.Combine(pathToCollection, document);
+            string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            Directory.SetCurrentDirectory(desktop);
+            string text = System.IO.File.ReadAllText(path);
+            Console.WriteLine(text);
+            return text;
+        }
         //can delete anything
+     
         public void Delete(string name, string type)
         {
             if (type == "database")
@@ -104,6 +132,45 @@ namespace datastorageapplication
                 var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 Directory.Delete(Path.Combine(pathTodb, name));
             }
+           
+        }
+        public string Query(string query)
+        {
+            string[] documents = Directory.GetFiles(pathToCollection);
+            List<string> texts = new List<string>();
+
+            for (int i = 0; i < documents.Length; i++)
+            {
+            
+
+                string path = Path.Combine(pathToCollection, documents[i]);
+                string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                Directory.SetCurrentDirectory(desktop);
+                string text = System.IO.File.ReadAllText(path);
+                
+                if (documents[i] != "/Users/home/Desktop/db/data/.DS_Store")
+                {
+
+                    if (text.Contains(query))
+                    {
+                        texts.Add(text);
+                        if (i == documents.Length - 1)
+                        {
+                            return string.Join(Environment.NewLine + Environment.NewLine, texts.ToArray());
+                        }
+
+                    }
+          
+                    
+                }
+                
+            
+                
+                
+            }
+            return "Query:" + query;
+
         }
     }
 }
+
