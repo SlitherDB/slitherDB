@@ -44,3 +44,23 @@ Nav works with documents aswell:
 > nav document user1
 ```
 wich will allow you to create fields in that document.
+## The echo command 
+The echo command in the SlitherDB terminal functions the same as the echo command in the regular terminal but can also be used for many other usefull things like queries and displaying all of the fields in a document.
+### Queries
+In SlitherDB you can use the echo command for queries like this:
+```
+> echo query "Name":"Bob"
+```
+What this does is finds a document with a field called "Name" that has a value of "Bob" and then returns it's value.
+Here is a document in the database:
+```
+"Name":"Bob"
+"UserID":"1"
+```
+Now when we run the echo query command we saw earlier it returns this:
+```
+> echo query "Name":"Bob"
+
+"Name":"Bob"
+"UserID":"1"
+```
