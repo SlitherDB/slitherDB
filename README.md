@@ -4,6 +4,11 @@
 
 A no-SQL database for c# projects, i have started to develop this for storing scores and other user data for the user in my unity games. This database at the moment can only store data locally on people's computers because i cant afford servers.
 Anyone that has used mongoDB before in there projects should feel right at home using SlitherDB because both mongoDB and SlitherDB are No-SQL and document databases.
+# Structure of a slitherDB database 
+SlitherDB is a document based database so here is a diagram demonstrates the layout of the database:
+![alt text](https://github.com/SlitherDB/slitherDB/blob/master/misc/Screen%20Shot%202020-05-02%20at%2011.49.39.png "diagram")
+
+
 # The terminal
 In slitherDB there is a terminal that can be used to carry out operations such as: Creating databases, collections and documents.
 
