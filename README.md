@@ -24,7 +24,7 @@ Creating documents:
 ```
 You can also create fields in documents with the terminal aswell:
 ```
->create field "name":"Bob"
+>create field "Name":"Bob"
 ```
 You will notice that this has a very similar syntax to JSON.
 ## The nav command
@@ -64,3 +64,11 @@ Now when we run the echo query command we saw earlier it returns this:
 "Name":"Bob"
 "UserID":"1"
 ```
+## The change command
+The change command is a very usefull command to change objects in your database.
+### Change fields
+To change a field you must first navigate into a document with the `nav` command, once you have done that you can run this command:
+```
+> change field "Name":"Sam"
+```
+Wich will get our previously created field that was called `"Name"` and had a value of `"Bob"` and will change it from `"Name":"Bob"` to `"Name":"Sam"`.
