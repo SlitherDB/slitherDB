@@ -57,6 +57,23 @@ namespace slitherTerminal
                         slither.EnterDocument(parsedCommand[2]);
                     }
                 }
+                if (parsedCommand[0] == "clear")
+                {
+                    if (parsedCommand[1] == "document")
+                    {
+                        
+                        slither.ClearDocument();
+                    }
+            
+
+                }
+                if (parsedCommand[0] == "change")
+                {
+                    if (parsedCommand[1] == "field")
+                    {
+                        slither.ChangeField(parsedCommand[2]);
+                    }
+                }
                 if (parsedCommand[0] == "echo")
                 {
                     if (parsedCommand[1] == "document")
