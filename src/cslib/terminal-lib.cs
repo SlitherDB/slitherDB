@@ -134,6 +134,62 @@ namespace datastorageapplication
             }
            
         }
+        static void lineChanger(string newText, string fileName, int line_to_edit)
+        {
+            string[] arrLine = File.ReadAllLines(fileName);
+            arrLine[line_to_edit - 1] = newText;
+            File.WriteAllLines(fileName, arrLine);
+        }
+        public void ClearDocument()
+        {
+            System.IO.File.WriteAllText(pathToDocument, string.Empty);
+        }
+        public int ChangeField(string fieldName) 
+        {
+            string[] fieldNameArr = fieldName.Split(':');
+            int fieldLine = 0;
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            Directory.SetCurrentDirectory(path);
+            System.IO.StreamReader file = new System.IO.StreamReader(pathToDocument);
+            int x = 1;
+            string line;
+            while ((line = file.ReadLine()) != null)
+            {
+                string name = fieldNameArr[0];
+                Console.WriteLine(name);
+                if (line.Substring(0, name.Length) == name)
+                {
+
+                    fieldLine = x;
+              
+                    string[] arrLine = File.ReadAllLines(pathToDocument);
+                    try
+                    {
+                        //  Block of code to try
+                        arrLine[fieldLine - 1] = fieldName;
+                        file.Dispose();
+                        File.WriteAllLines(pathToDocument, arrLine);
+                        file = new System.IO.StreamReader(pathToDocument);
+                    }
+                    catch (Exception e)
+                    {
+                        //  Block of code to handle errors
+                        return 0;
+                    }
+                   
+
+
+
+                    
+                    
+
+                    
+                    
+                }
+                x++;
+            }
+            return 0;
+        }
         public string Query(string query)
         {
             string[] documents = Directory.GetFiles(pathToCollection);
@@ -156,7 +212,19 @@ namespace datastorageapplication
                         texts.Add(text);
                         if (i == documents.Length - 1)
                         {
-                            return string.Join(Environment.NewLine + Environment.NewLine, texts.ToArray());
+                            if (texts.Count == 0)
+                            {
+                                
+                                texts.Add("null");
+                            }
+                            if (texts[texts.Count - 1] == "null")
+                            {
+                                return "null";
+                            }
+                            else
+                            {
+                                return string.Join(Environment.NewLine + Environment.NewLine, texts.ToArray());
+                            }
                         }
 
                     }
@@ -173,4 +241,3 @@ namespace datastorageapplication
         }
     }
 }
-
