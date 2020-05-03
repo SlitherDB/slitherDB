@@ -77,3 +77,5 @@ To change a field you must first navigate into a document with the `nav` command
 > change field "Name":"Sam"
 ```
 Wich will get our previously created field that was called `"Name"` and had a value of `"Bob"` and will change it from `"Name":"Bob"` to `"Name":"Sam"`.
+# Using SlitherDB in projects with SQIL
+SQIL or Slitherlizard Query Interpreted Language is a work in progress query language so you can use slitherDB in your projects!
