@@ -11,7 +11,11 @@ SlitherDB is a document based database so here is a diagram demonstrates the lay
 
 # The terminal
 In slitherDB there is a terminal that can be used to carry out operations such as: Creating databases, collections and documents.
+## How to run the terminal????
+Just like any other c# program.
+Here is a tutorial for using visual studio for c#, just open the slitherDB folder into visual studio and hit the play button to run the terminal :).
 
+https://www.w3schools.com/cs/cs_getstarted.asp
 ## The create command
 In the slitherDB shell there is a VERY important command that you will use alot called create, the create command can be used to create databases, collections and documents these are the types. The create command is layed out like this:
 ```
