@@ -83,3 +83,10 @@ To change a field you must first navigate into a document with the `nav` command
 Wich will get our previously created field that was called `"Name"` and had a value of `"Bob"` and will change it from `"Name":"Bob"` to `"Name":"Sam"`.
 # Using SlitherDB in projects with SQIL
 SQIL or Slitherlizard Query Interpreted Language is a work in progress query language so you can use slitherDB in your projects!
+## SQIL Progress 
+- [x] lexing echo message statement
+- [ ] parsing echo message statement
+- [ ] evaluating and output with echo message statement
+- [ ] Lexing nav statement 
+- [ ] Parsing nav statement
+- [ ] evaluating and output with nav statement
