@@ -33,17 +33,25 @@ namespace lexer
                     string currentToken = currentLine[currentTokenIndex];
                     //add whatever the current token is to the Tokens list
                     if (currentToken == "echo") {
-                        Tokens.Add("STATEMENT: echo");
+                        Tokens.Add("STATEMENT:echo");
                     
                         
                     } else if (currentToken == "message") {
-                        Tokens.Add("TYPE: message");
+                        Tokens.Add("TYPE:message");
                     } 
                     else if(currentToken == "'") {
-                        Tokens.Add("SYMBOL: '");
+                        //The string token is a bit more complicated but not much
+                        Tokens.Add("'");
+                        //This basically just gets the text between two ' and then gets that as a string
+                        int start_index = currentLineStr.IndexOf("'")+1;
+                        int end_index = currentLineStr.LastIndexOf("'");
+                        int length = end_index-start_index;
+                        string stringToken = currentLineStr.Substring(start_index,length);
+                        Tokens.Add("STRING:" + stringToken);
                         
-                    }
-                    //TODO: Finish Lexing echo statements
+                        currentTokenIndex++;
+                        
+                    } 
                     currentTokenIndex++;
                 }
 
