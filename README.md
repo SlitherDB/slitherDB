@@ -90,3 +90,12 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [ ] Lexing nav statement 
 - [ ] Parsing nav statement
 - [ ] evaluating and output with nav statement
+# Development
+To contribute to SlitherDB you can run these commands:
+```
+> git clone https://github.com/SlitherDB/slitherDB
+```
+Then:
+```
+> cd slitherDB
+```
