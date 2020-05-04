@@ -85,7 +85,7 @@ Wich will get our previously created field that was called `"Name"` and had a va
 SQIL or Slitherlizard Query Interpreted Language is a work in progress query language so you can use slitherDB in your projects!
 ## SQIL Progress 
 - [x] lexing echo message statement
-- [ ] parsing echo message statement
+- [x] parsing echo message statement
 - [ ] evaluating and output with echo message statement
 - [ ] Lexing nav statement 
 - [ ] Parsing nav statement
