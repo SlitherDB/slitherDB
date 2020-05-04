@@ -16,6 +16,8 @@ Just like any other c# program.
 Here is a tutorial for using visual studio for c#, just open the slitherDB folder into visual studio and hit the play button to run the terminal :).
 
 https://www.w3schools.com/cs/cs_getstarted.asp
+
+Or use dotnet terminal commands :)
 ## The create command
 In the slitherDB shell there is a VERY important command that you will use alot called create, the create command can be used to create databases, collections and documents these are the types. The create command is layed out like this:
 ```
