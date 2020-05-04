@@ -7,8 +7,6 @@ Anyone that has used mongoDB before in there projects should feel right at home 
 # Structure of a slitherDB database 
 SlitherDB is a document based database so here is a diagram demonstrates the layout of the database:
 ![alt text](https://github.com/SlitherDB/slitherDB/blob/master/misc/Screen%20Shot%202020-05-02%20at%2011.49.39.png "diagram")
-
-
 # The terminal
 In slitherDB there is a terminal that can be used to carry out operations such as: Creating databases, collections and documents.
 ## How to run the terminal????
