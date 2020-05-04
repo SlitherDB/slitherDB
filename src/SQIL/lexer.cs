@@ -9,13 +9,8 @@ namespace lexer
        
         static int line = 0;
         static List<string> Tokens = new List<string>();
-        public static void Main(string[] args)
-        {
-            Lex();
-            
 
-        }
-        public static void Lex()
+        public static List<string> Lex()
         {
             Console.WriteLine("Lexing SQIL Program");
             //Get the SQIL file
@@ -57,6 +52,7 @@ namespace lexer
 
                 line++;
             }
+            return Tokens;
             
             
         }
