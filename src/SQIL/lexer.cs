@@ -12,7 +12,7 @@ namespace lexer
 
         public static List<string> Lex()
         {
-            Console.WriteLine("Lexing SQIL Program");
+            
             //Get the SQIL file
             string[] file = System.IO.File.ReadAllLines("project.SQIL");
             //Go through each line of the program
@@ -44,7 +44,10 @@ namespace lexer
                         string stringToken = currentLineStr.Substring(start_index,length);
                         Tokens.Add("STRING:" + stringToken);
                         
-                        currentTokenIndex++;
+                        
+                        
+                    } else if (currentToken == ";") {
+                        Tokens.Add("NEXT");
                         
                     } 
                     currentTokenIndex++;
