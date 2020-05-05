@@ -86,7 +86,7 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 ## SQIL Progress 
 - [x] lexing echo message statement
 - [x] parsing echo message statement
-- [ ] evaluating and output with echo message statement
+- [x] evaluating and output with echo message statement
 - [ ] Lexing nav statement 
 - [ ] Parsing nav statement
 - [ ] evaluating and output with nav statement
