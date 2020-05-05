@@ -8,7 +8,7 @@ namespace parser
 
        public static List<string> Parse(List<string> Tokens) {
             List<string> parsedTokens = new List<string>();
-            Console.WriteLine("Parsing SQIL program");
+            
             int currentToken = 0;
             while (currentToken <= Tokens.Count - 1) {
                 string currentTokenStr = Tokens[currentToken];
@@ -25,6 +25,8 @@ namespace parser
                    
                 } else if (currentTokenArr[0] == "STRING") {
                     parsedTokens.Add(currentTokenArr[1]);
+                } else if (currentTokenArr[0] == "NEXT") {
+                    parsedTokens.Add("NEXT");
                 }
                 currentToken++;
             }
