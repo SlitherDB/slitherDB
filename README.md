@@ -87,9 +87,15 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [x] lexing echo message statement
 - [x] parsing echo message statement
 - [x] evaluating and output with echo message statement
-- [ ] Lexing nav statement 
-- [ ] Parsing nav statement
-- [ ] evaluating and output with nav statement
+- [x] Lexing nav database statement 
+- [x] Parsing nav database statement
+- [x] evaluating and output with nav database statement
+- [x] Lexing create collection statement 
+- [x] Parsing create collection statement
+- [x] evaluating and output with create collection statement
+- [ ] Lexing nav collection statement 
+- [ ] Parsing nav collection statement
+- [ ] evaluating and output with nav collection statement 
 # Development
 To contribute to SlitherDB you can run these commands:
 ```
