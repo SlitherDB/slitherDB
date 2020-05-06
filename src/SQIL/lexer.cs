@@ -46,10 +46,20 @@ namespace lexer
                         
                         
                         
-                    } else if (currentToken == ";") {
+                    } else if (currentToken == "nav") {
+                        Tokens.Add("STATEMENT:nav");
+
+                    } else if (currentToken == "database") {
+                        Tokens.Add("TYPE:database");
+                    }  else if (currentToken == "create") {
+                        Tokens.Add("STATEMENT:create");
+                    } else if (currentToken == "collection") {
+                        Tokens.Add("TYPE:collection");
+                    }
+                    else if (currentToken == ";") {
                         Tokens.Add("NEXT");
                         
-                    } 
+                    }  
                     currentTokenIndex++;
                 }
 
