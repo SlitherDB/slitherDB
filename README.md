@@ -96,6 +96,7 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [ ] Lexing nav collection statement 
 - [ ] Parsing nav collection statement
 - [ ] evaluating and output with nav collection statement 
+- [ ] Embedding code in c# projects
 # Development
 To contribute to SlitherDB you can run these commands:
 ```
