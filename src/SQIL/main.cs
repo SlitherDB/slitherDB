@@ -19,8 +19,14 @@ namespace interpreter
             List<string> programParsed = Parser.Parse(programLexed);
 
             Evaluator.evaluate(programParsed);
-            
-           
+            programLexed.ForEach(i => Console.Write("{0}\t", i));
+          
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Parsed: ");
+            programParsed.ForEach(i => Console.Write("{0}\t", i));
 
             
             
