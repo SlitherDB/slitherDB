@@ -17,13 +17,13 @@ namespace parser
 
                     parsedTokens.Add(currentTokenArr[1]);
                 } else if (currentTokenArr[0] == "TYPE") {
-                    parsedTokens.Add(currentTokenArr[1]);
-                } else if (currentTokenArr[0] == "'"){
-                    parsedTokens.Add(currentTokenArr[0]);
+                  parsedTokens.Add(currentTokenArr[1]);
+
+               } else if (currentTokenArr[0] == "'") {
+                   parsedTokens.Add(currentTokenArr[0]);
+               }
+                 else if (currentTokenArr[0] == "STRING") {
                     
-                    
-                   
-                } else if (currentTokenArr[0] == "STRING") {
                     parsedTokens.Add(currentTokenArr[1]);
                 } else if (currentTokenArr[0] == "NEXT") {
                     parsedTokens.Add("NEXT");
