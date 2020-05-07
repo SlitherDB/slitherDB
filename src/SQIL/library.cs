@@ -33,7 +33,12 @@ namespace Outputlib
                 pathTodb = folder;
                 Console.WriteLine(pathTodb);
                 dbname = parameter;
-            }
+            } else if (type == "collection") {
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                var folder = Path.Combine(path, pathTodb, parameter);
+                Directory.CreateDirectory(folder);
+                pathToCollection = folder;
+            } 
         }
         public static void create (string type, string parameter) {
             if (type == "collection") {
@@ -42,6 +47,12 @@ namespace Outputlib
                 Directory.SetCurrentDirectory(dbname);
         
                 Directory.CreateDirectory(parameter);
+            } else if (type == "document") {
+                string path = Path.Combine(pathToCollection, parameter);
+                string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                Directory.SetCurrentDirectory(desktop);
+    
+                using (StreamWriter writer = File.CreateText(path)) ;                
             }
         }
     }
