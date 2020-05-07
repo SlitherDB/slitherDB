@@ -6,27 +6,20 @@ using System.IO;
 using System.Collections.Generic;
 namespace interpreter
 {
-    public class Transpiler
+    public class Interpreter
     {
-        public static void Main(string[] args)
+        public static void SQLInterpreter(string[] file)
         {
             
             Lexer lexer = new Lexer();
             Parser parser = new Parser();
             Evaluator evaluator = new Evaluator();
            
-            List<string> programLexed = Lexer.Lex();
+            List<string> programLexed = Lexer.Lex(file);
             List<string> programParsed = Parser.Parse(programLexed);
 
             Evaluator.evaluate(programParsed);
-            programLexed.ForEach(i => Console.Write("{0}\t", i));
-          
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine();
-            Console.WriteLine("Parsed: ");
-            programParsed.ForEach(i => Console.Write("{0}\t", i));
+
 
             
             
