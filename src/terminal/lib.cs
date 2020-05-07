@@ -47,7 +47,7 @@ namespace datastorageapplication
         }
         public void AddData(string document, string data)
         {
-            string[] DataStr = data.Split(':');
+            string[] DataStr = data.Split('=');
             if (DataStr.Length < 2)
             {
                 Console.WriteLine("Error: Field must have a value!");
