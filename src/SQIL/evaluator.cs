@@ -26,7 +26,7 @@ namespace evaluator
                 } else if (token == "message") {
                     type = "message";
                 } else if (token == "'") {
-                   
+               
                     param = Program[tokenIndex + 1];
                 } else if (token == "nav") {
                     statement = "nav";
@@ -38,8 +38,11 @@ namespace evaluator
                     type = "collection";
                 } else if (token == "document") {
                     type = "document";
+                } else if (token == "field") {
+                  
+                    type = "field";
                 }
-                else if (token == "NEXT") {
+                 else if (token == "NEXT") {
                  
                     if (statement == "echo") {
                         
@@ -49,6 +52,7 @@ namespace evaluator
                         outputlib.nav(type, param);
                     }
                     else if (statement == "create") {
+                      
                         outputlib.create(type, param);
                     }
                 }
