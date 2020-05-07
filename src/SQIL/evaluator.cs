@@ -39,7 +39,7 @@ namespace evaluator
                 } else if (token == "document") {
                     type = "document";
                 } else if (token == "field") {
-                  
+                    
                     type = "field";
                 }
                  else if (token == "NEXT") {
@@ -52,7 +52,7 @@ namespace evaluator
                         outputlib.nav(type, param);
                     }
                     else if (statement == "create") {
-                      
+          
                         outputlib.create(type, param);
                     }
                 }
