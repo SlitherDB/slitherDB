@@ -24,35 +24,60 @@ namespace Outputlib
         }
         public static void nav(string type, string parameter) {
         
-            Console.WriteLine("Nav");
+           
             if (type == "database") {
-                Console.WriteLine("db");
+         
                 var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 var folder = Path.Combine(path, parameter);
            
                 pathTodb = folder;
-                Console.WriteLine(pathTodb);
+                
                 dbname = parameter;
             } else if (type == "collection") {
                 var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 var folder = Path.Combine(path, pathTodb, parameter);
                 Directory.CreateDirectory(folder);
                 pathToCollection = folder;
-            } 
+            } else if (type == "document") {
+  
+                var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                var folder = Path.Combine(pathToCollection, parameter);
+                pathToDocument = folder;
+            }
         }
         public static void create (string type, string parameter) {
+
             if (type == "collection") {
                 var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 Directory.SetCurrentDirectory(path);
                 Directory.SetCurrentDirectory(dbname);
         
                 Directory.CreateDirectory(parameter);
-            } else if (type == "document") {
+            } 
+            if (type == "document") {
                 string path = Path.Combine(pathToCollection, parameter);
                 string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 Directory.SetCurrentDirectory(desktop);
     
                 using (StreamWriter writer = File.CreateText(path)) ;                
+            } 
+            if (type == "field") {
+                
+                string[] DataStr = parameter.Split('=');
+                
+                if (DataStr.Length < 2)
+                {
+                    Console.WriteLine("Error: Field must have a value!");
+                }
+                else
+                {
+                    //get the path to the desktop folder
+                    var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                    //create the fill directory of the document example: desktop/db/document
+                    var folder = Path.Combine(pathTodb, pathToCollection, pathToDocument);
+                    File.AppendAllText(folder, parameter + Environment.NewLine);
+
+                }
             }
         }
     }
