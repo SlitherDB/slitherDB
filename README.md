@@ -2,7 +2,7 @@
 ![alt text](https://github.com/SlitherDB/slither-db/blob/master/misc/Screen%20Shot%202020-04-27%20at%2013.28.39.png "Logo")
 
 
-A no-SQL database for c# projects, i have started to develop this for storing scores and other user data for the user in my unity games. This database at the moment can only store data locally on people's computers because i cant afford servers.
+A no-SQL database. i have started to develop this for storing scores and other user data for the user in my unity games. This database at the moment can only store data locally on people's computers because i cant afford servers.
 Anyone that has used mongoDB before in there projects should feel right at home using SlitherDB because both mongoDB and SlitherDB are No-SQL and document databases.
 # Structure of a slitherDB database 
 SlitherDB is a document based database so here is a diagram demonstrates the layout of the database:
@@ -100,6 +100,10 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [ ] Lexing nav document statement 
 - [ ] Parsing nav document statement
 - [ ] evaluating and output with nav document statement 
+## List of planned SQIL drivers and ones in development:
+. c# (in development)
+. python (planned)
+. c (planned)
 # Development
 To contribute to SlitherDB you can run these commands:
 ```
