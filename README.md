@@ -100,7 +100,7 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [ ] Lexing nav document statement 
 - [ ] Parsing nav document statement
 - [ ] evaluating and output with nav document statement 
-## List of planned SQIL drivers and ones in development:
+# List of planned SlitherDB drivers and ones in development:
 1. c# (in development)
 2. python (planned)
 3. c (planned)
