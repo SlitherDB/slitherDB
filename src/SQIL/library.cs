@@ -63,7 +63,7 @@ namespace Outputlib
             } 
             if (type == "field") {
                 
-                string[] DataStr = parameter.Split('=');
+                string[] DataStr = parameter.Split(':');
                 
                 if (DataStr.Length < 2)
                 {
