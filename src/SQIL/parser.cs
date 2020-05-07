@@ -11,8 +11,9 @@ namespace parser
             
             int currentToken = 0;
             while (currentToken <= Tokens.Count - 1) {
+                
                 string currentTokenStr = Tokens[currentToken];
-                string[] currentTokenArr = currentTokenStr.Split(':');
+                string[] currentTokenArr = currentTokenStr.Split(",");
                 if (currentTokenArr[0] == "STATEMENT") {
 
                     parsedTokens.Add(currentTokenArr[1]);
@@ -24,8 +25,10 @@ namespace parser
                }
                  else if (currentTokenArr[0] == "STRING") {
                     
+               
                     parsedTokens.Add(currentTokenArr[1]);
                 } else if (currentTokenArr[0] == "NEXT") {
+                    
                     parsedTokens.Add("NEXT");
                 }
                 currentToken++;
