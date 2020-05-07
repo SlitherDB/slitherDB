@@ -93,10 +93,13 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [x] Lexing create collection statement 
 - [x] Parsing create collection statement
 - [x] evaluating and output with create collection statement
-- [ ] Lexing nav collection statement 
-- [ ] Parsing nav collection statement
-- [ ] evaluating and output with nav collection statement 
-- [ ] Embedding code in c# projects
+- [x] Lexing nav collection statement 
+- [x] Parsing nav collection statement
+- [x] evaluating and output with nav collection statement 
+- [x] Embedding code in c# projects
+- [ ] Lexing nav document statement 
+- [ ] Parsing nav document statement
+- [ ] evaluating and output with nav document statement 
 # Development
 To contribute to SlitherDB you can run these commands:
 ```
