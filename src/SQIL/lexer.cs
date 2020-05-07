@@ -10,11 +10,12 @@ namespace lexer
         static int line = 0;
         static List<string> Tokens = new List<string>();
 
-        public static List<string> Lex()
+        public static List<string> Lex(string[] file)
         {
-            
+                    
             //Get the SQIL file
-            string[] file = System.IO.File.ReadAllLines("project.SQIL");
+
+            
             //Go through each line of the program
             while (line <= file.Length - 1) {
                 //Get the current line that needs to be Lexed 
@@ -55,6 +56,8 @@ namespace lexer
                         Tokens.Add("STATEMENT:create");
                     } else if (currentToken == "collection") {
                         Tokens.Add("TYPE:collection");
+                    } else if (currentToken == "document") {
+                        Tokens.Add("TYPE:document");
                     }
                     else if (currentToken == ";") {
                         Tokens.Add("NEXT");
