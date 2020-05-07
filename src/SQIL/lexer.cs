@@ -58,6 +58,9 @@ namespace lexer
                         Tokens.Add("TYPE:collection");
                     } else if (currentToken == "document") {
                         Tokens.Add("TYPE:document");
+                    } else if (currentToken == "field") {
+                    
+                        Tokens.Add("TYPE:field");
                     }
                     else if (currentToken == ";") {
                         Tokens.Add("NEXT");
