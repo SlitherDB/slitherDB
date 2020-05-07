@@ -104,7 +104,7 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 1. c# (in development)
 2. python (planned)
 3. c (planned)
-4.javascript(planned)
+4. javascript(planned)
 # C# driver tutorial 
 The c# slitherDB is a way to interact with slitherDB with the c# programming language. This will be a tutorial to use it!
 # Development
