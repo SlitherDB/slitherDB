@@ -29,13 +29,14 @@ namespace lexer
                     string currentToken = currentLine[currentTokenIndex];
                     //add whatever the current token is to the Tokens list
                     if (currentToken == "echo") {
-                        Tokens.Add("STATEMENT:echo");
+                        Tokens.Add("STATEMENT,echo");
                     
                         
                     } else if (currentToken == "message") {
-                        Tokens.Add("TYPE:message");
+                        Tokens.Add("TYPE,message");
                     } 
                     else if(currentToken == "'") {
+                  
                         //The string token is a bit more complicated but not much
                         Tokens.Add("'");
                         //This basically just gets the text between two ' and then gets that as a string
@@ -43,25 +44,25 @@ namespace lexer
                         int end_index = currentLineStr.LastIndexOf("'");
                         int length = end_index-start_index;
                         string stringToken = currentLineStr.Substring(start_index,length);
-                        Tokens.Add("STRING:" + stringToken);
+                        Tokens.Add("STRING," + stringToken);
                         
                         
                         
                     } else if (currentToken == "nav") {
-                        Tokens.Add("STATEMENT:nav");
+                        Tokens.Add("STATEMENT,nav");
 
                     } else if (currentToken == "database") {
-                        Tokens.Add("TYPE:database");
+                        Tokens.Add("TYPE,database");
                     }  else if (currentToken == "create") {
-                        Tokens.Add("STATEMENT:create");
+                        Tokens.Add("STATEMENT,create");
                     } else if (currentToken == "collection") {
-                        Tokens.Add("TYPE:collection");
+                        Tokens.Add("TYPE,collection");
                     } else if (currentToken == "document") {
-                        Tokens.Add("TYPE:document");
+                        Tokens.Add("TYPE,document");
                     } else if (currentToken == "field") {
                     
-                        Tokens.Add("TYPE:field");
-                    }
+                        Tokens.Add("TYPE,field");
+                    } 
                     else if (currentToken == ";") {
                         Tokens.Add("NEXT");
                         
@@ -72,7 +73,7 @@ namespace lexer
                 line++;
             }
             return Tokens;
-            
+             
             
         }
     }
