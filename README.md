@@ -103,7 +103,9 @@ SQIL or Slitherlizard Query Interpreted Language is a work in progress query lan
 - [x] Lexing create field statement 
 - [x] Parsing create field statement
 - [x] evaluating and output with create field statement 
-- [ ] queries
+- [x] queries
+- [ ] variables
+- [ ] echo variable
 # List of planned SlitherDB drivers and ones in development:
 1. c# (in development)
 2. python (planned)
