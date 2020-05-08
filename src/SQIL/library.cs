@@ -16,11 +16,52 @@ namespace Outputlib
 
         public static void echo(string type, string parmeter)
         {
-            
+            Console.WriteLine(type);
             if (type == "message") {
                 Console.WriteLine(parmeter);
+            } else if (type == "query") {
+                
+                          string[] documents = Directory.GetFiles(pathToCollection);
+            List<string> texts = new List<string>();
+
+            for (int i = 0; i < documents.Length; i++)
+            {
+            
+
+                string path = Path.Combine(pathToCollection, documents[i]);
+                string desktop = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                Directory.SetCurrentDirectory(desktop);
+                string text = System.IO.File.ReadAllText(path);
+                
+                if (documents[i] != "/Users/home/Desktop/db/data/.DS_Store")
+                {
+
+                    if (text.Contains(parmeter))
+                    {
+                        texts.Add(text);
+                        if (i == documents.Length - 1)
+                        {
+                            if (texts.Count == 0)
+                            {
+                                
+                                texts.Add("null");
+                            }
+                            if (texts[texts.Count - 1] == "null")
+                            {
+                                
+                            }
+                            else
+                            {
+                                Console.WriteLine(string.Join(Environment.NewLine + Environment.NewLine, texts.ToArray()));
+                            }
+                        }
+                    }
+                
+
             }
 
+        }
+        }
         }
         public static void nav(string type, string parameter) {
         
