@@ -33,7 +33,7 @@ Creating documents:
 ```
 You can also create fields in documents with the terminal aswell:
 ```
->create field "Name":"Bob"
+>create field 'Name':'Bob'
 ```
 You will notice that this has a very similar syntax to JSON.
 ## The nav command
@@ -58,27 +58,27 @@ The echo command in the SlitherDB terminal functions the same as the echo comman
 ### Queries
 In SlitherDB you can use the echo command for queries like this:
 ```
-> echo query "Name":"Bob"
+> echo query 'Name':'Bob'
 ```
 What this does is finds a document with a field called "Name" that has a value of "Bob" and then returns it's value.
 Here is a document in the database:
 ```
-"Name":"Bob"
-"UserID":"1"
+'Name':"Bob'
+'UserID":"1'
 ```
 Now when we run the echo query command we saw earlier it returns this:
 ```
-> echo query "Name":"Bob"
+> echo query 'Name':'Bob'
 
-"Name":"Bob"
-"UserID":"1"
+'Name':'Bob'
+'UserID":"1'
 ```
 ## The change command
 The change command is a very usefull command to change objects in your database.
 ### Change fields
 To change a field you must first navigate into a document with the `nav` command, once you have done that you can run this command:
 ```
-> change field "Name":"Sam"
+> change field 'Name":'Sam'
 ```
 Wich will get our previously created field that was called `"Name"` and had a value of `"Bob"` and will change it from `"Name":"Bob"` to `"Name":"Sam"`.
 # Using SlitherDB in projects with SQIL
