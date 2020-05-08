@@ -41,6 +41,8 @@ namespace evaluator
                 } else if (token == "field") {
                     
                     type = "field";
+                } else if (token == "query") {
+                    type = "query";
                 }
                  else if (token == "NEXT") {
                  
