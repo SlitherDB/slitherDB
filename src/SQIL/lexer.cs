@@ -62,7 +62,10 @@ namespace lexer
                     } else if (currentToken == "field") {
                     
                         Tokens.Add("TYPE,field");
-                    } 
+                    } else if (currentToken == "query") {
+                
+                        Tokens.Add("TYPE,query");
+                    }
                     else if (currentToken == ";") {
                         Tokens.Add("NEXT");
                         
