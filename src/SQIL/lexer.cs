@@ -65,6 +65,11 @@ namespace lexer
                     } else if (currentToken == "query") {
                 
                         Tokens.Add("TYPE,query");
+                    } else if (currentToken == "var") {
+                       
+                        Tokens.Add("STATEMENT,var");
+                    } else if (currentToken == "default") {
+                        Tokens.Add("TYPE,default");
                     }
                     else if (currentToken == ";") {
                         Tokens.Add("NEXT");
