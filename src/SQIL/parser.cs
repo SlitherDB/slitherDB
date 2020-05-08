@@ -22,7 +22,7 @@ namespace parser
 
                } else if (currentTokenArr[0] == "'") {
                    parsedTokens.Add(currentTokenArr[0]);
-               }
+               } 
                  else if (currentTokenArr[0] == "STRING") {
                     
                
