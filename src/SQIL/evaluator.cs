@@ -43,6 +43,13 @@ namespace evaluator
                     type = "field";
                 } else if (token == "query") {
                     type = "query";
+                } else if (token == "var") {
+                    statement = "var";
+                } else if (token == "variable") {
+                    type = "var";
+                }
+                else if (token == "default") {
+                    type = "default";
                 }
                  else if (token == "NEXT") {
                  
@@ -56,6 +63,8 @@ namespace evaluator
                     else if (statement == "create") {
           
                         outputlib.create(type, param);
+                    } else if (statement == "var") {
+                        outputlib.var(type, param);
                     }
                 }
                 tokenIndex++;
